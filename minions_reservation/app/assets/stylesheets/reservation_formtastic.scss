@@ -1,0 +1,20 @@
+// Place all the styles related to the Reservas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+.formtastic .stringish input {
+    width: 40%;
+}
+
+.formtastic .stringish label {
+    width: 5%;
+    color: red;
+}
+
+.formtastic .stringish checkbox {
+    width: 60%;
+    color: red;
+}

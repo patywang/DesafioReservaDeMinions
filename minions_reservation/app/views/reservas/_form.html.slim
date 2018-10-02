@@ -1,0 +1,22 @@
+h2 Faça a sua reserva!
+
+= semantic_form_for @reserva do |f|
+          
+  = f.inputs do
+    = f.label :data
+    = f.datetime_select :data
+    
+    br
+    
+    = f.input :descricao
+    
+    - min = ['Minion 1', 'Minion 2', 'Minion 3', 'Minion 4', 'Minion 5']
+    - min.each do |m|
+      = f.check_box :minions, { multiple: true }, m, false
+      = f.label m
+      br
+    
+
+  = f.actions do
+    = f.action :submit, as: :input
+    

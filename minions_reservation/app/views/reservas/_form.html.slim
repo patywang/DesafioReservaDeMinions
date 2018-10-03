@@ -14,17 +14,13 @@ html lang="en"
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
   body
-    .navbar.navbar-default.navbar-static-top
+    .navbar.navbar-default.navbar-static-top style="background-color: #FFD700;"
         .container
-          button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand href="#"Minions Reservation
-
-              
+          a.navbar-brand style="color: #000;" Minions Reservation
+          
     .container
       .row
+  
         .col-lg-9
           .col-6.col-sm-4
  
@@ -34,9 +30,8 @@ html lang="en"
                 h5.card-title
                   | Minion Kevin
                 p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
-               
-                  
+                  | Desenvolvidos a partir de um único DNA - o motivo por serem tão parecidos - possuem um único propósito na vida: servir os maiores vilões de todos os tempos!
+              
           .col-6.col-sm-4
             .card[style="width: 18rem;"]
               img.card-img-top[src="assets/minions/minion-2.jpg" alt="Card image cap"]
@@ -44,7 +39,7 @@ html lang="en"
                 h5.card-title
                   | Minion Carl
                 p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  | Minions, também definidos como "capanguinhas", são amarelinhos, e podem existir com um olho, dois olhos, topetes, cabelos caídos, curtos, ou nenhum cabelo. .
                
                   
           .col-6.col-sm-4
@@ -54,11 +49,12 @@ html lang="en"
                 h5.card-title
                   | Minion Stuart
                 p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  | Agora as crianças também poderão ter seu minion em casa e se divertir de montão com o Boneco Minion - Stuart.
                
         .col-lg-3
           .well.sidebar-nav style="background-color: #FFD700"
             h3 Faça a sua reserva!
+            br
             ul.nav.nav-list
               
               = semantic_form_for @reserva do |f|
@@ -73,15 +69,16 @@ html lang="en"
                   
                 - min = ['Minion Kevin', 'Minion Carl', 'Minion Stuart', 'Minion Bob', 'Avengers Minions']
                 - min.each do |m|
-                  li= f.check_box :minions, { multiple: true }, m, false
-                  = f.label m
-                  br
+                  li= f.label m
+                  = f.check_box :minions, { multiple: true }, m, false
                   
-                 
+                br
+                
                 li= f.datetime_select :data
-              
+                
+                br
                 = f.actions do
-                  = f.action :submit, as: :input
+                  = f.action :submit, as: :button
                   
         .col-lg-9
           .col-6.col-sm-4
@@ -92,7 +89,7 @@ html lang="en"
                 h5.card-title
                   | Minion Bob
                 p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  | Agora as crianças também poderão ter seu minion em casa e se divertir de montão com o Boneco Minion - Bob.
                   
           .col-6.col-sm-4
  
@@ -102,6 +99,6 @@ html lang="en"
                 h5.card-title
                   | Avengers Minions
                 p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  | São mini figuras, colecionáveis, de aproximadamente 2,5 centímetros de altura, dos personagens da franquia Meu Malvado Favorito em roupa de super heróis!
               
                 

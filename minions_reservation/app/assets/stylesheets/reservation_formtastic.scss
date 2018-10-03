@@ -6,33 +6,51 @@ $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
 
 .formtastic .stringish input {
+    font-family: unset;
     width: 100%;
+    padding: 5px 20px;
+    margin: 0 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 11px;
+    box-sizing: border-box;
+
 }
 
 .formtastic .stringish label {
     width: 5%;
     color: black;
+    font-family: unset;
+    font-size: 12px;
 }
 
-.formtastic .stringish checkbox {
-    width: 60%;
-    color: red;
+.formtastic button{
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 11px;
+  cursor: pointer;
 }
+
 
 body {
   background-color: #fff;
-  color: #333;
+  color: $primary-color;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  margin: 10px;
 }
 
 pre {

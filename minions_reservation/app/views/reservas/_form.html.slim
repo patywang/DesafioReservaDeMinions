@@ -3,6 +3,9 @@ h2 Faça a sua reserva!
 = semantic_form_for @reserva do |f|
           
   = f.inputs do
+    
+    = f.input :email
+    
     = f.label :data
     = f.datetime_select :data
     

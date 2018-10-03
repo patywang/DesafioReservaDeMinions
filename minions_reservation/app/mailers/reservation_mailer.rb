@@ -1,10 +1,12 @@
 class ReservationMailer < ApplicationMailer
-  default from: 'patricia.castro.wang@gmail.com'
+  default from: 'reserva.minions@gmail.com'
   layout 'mailer'
   
   def reservation_mailer(reserva)
     @reserva = reserva
-    @url  = 'http://example.com/login'
-    mail(to: @reserva, subject: 'Welcome to My Awesome Site')
+    value = @reserva.minions
+    @minion = value.gsub(/\]|\[|/, "")
+
+    mail(to: 'patriciadecastrowang@yahoo.com.br', subject: 'Reserva de minions!')
   end
 end

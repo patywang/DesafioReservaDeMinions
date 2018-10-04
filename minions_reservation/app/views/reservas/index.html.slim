@@ -1,22 +1,39 @@
-h1 Listing reservas
 
-table
-  thead
-    tr
-      th Descricao
-      th Minions
-      th
-      th
-      th
-
-  tbody
-    - @reservas.each do |reserva|
-      tr
-        td = reserva.descricao
-        td = reserva.minions
-        td = link_to 'Show', reserva
-        td = link_to 'Destroy', reserva, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Reserva', new_reserva_path
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title= content_for?(:title) ? yield(:title) : "Minions Reservation"
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = javascript_include_tag "application"
+    /! Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+  body
+    .navbar.navbar-default.navbar-static-top style="background-color: #FFD700;"
+        .container
+          a.navbar-brand style="color: #000;" Minions Reservation
+          
+    .container
+      .row
+  
+        .col-sm-8 
+          img[src="assets/minions/minion-carl.jpg" alt="Trulli"  width="100%" height="100%"]
+          
+        .col-sm-4 style="padding-top: 12%"
+          
+            .well.sidebar-nav style="background-color: #FFD700"
+              center
+                h3 Bem-vindo(a) a Minions Reservation!
+                br
+                h4 Encontre os melhores bonecos minions aqui.
+                h4 Venha e faça sua reserva!
+                br
+                = link_to 'reserva', @reserva
+                  button.test[style="vertical-align:middle"]
+                    span
+                      | Reserve já

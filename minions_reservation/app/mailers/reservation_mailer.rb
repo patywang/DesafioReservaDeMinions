@@ -2,15 +2,33 @@ class ReservationMailer < ApplicationMailer
   default from: 'reserva.minions@gmail.com'
   layout 'mailer'
   
-  def reservation_mailer(reserva)
-    @reserva = reserva
-    value = @reserva.minions
-    @minion = value.gsub(/\]|\[|/, "")
+  
+  def timeCalculate()
     timeAux = Time.now
-    @time = timeAux - (3600 * 3)
-    #@time = Time.zone.now
-    #print '#######'
-    #print @time
-    mail(to: 'patriciadecastrowang@yahoo.com.br', subject: 'Reserva de minions!')
+    time = timeAux - (3600 * 3)
+    return time
+  end
+  
+  def minionReservationList(minionList)
+    listAux = minionList.gsub(/\]|\[|/, "")
+    return listAux
+  end
+  
+  def reservation_mailer(reserva)
+    
+    @reserva = reserva
+    @minion = minionReservationList(@reserva.minions)
+    @time = timeCalculate()
+    
+    mail(to: 'patriciadecastrowang@yahoo.com.br', subject: 'Nova reserva de minions!')
+  end
+  
+  def reservation_user_mailer(reserva)
+    
+    @reservaUser = reserva
+    @time = timeCalculate()
+    @minion = minionReservationList(@reservaUser.minions)
+    
+    mail(to: @reservaUser.email, subject: 'Reserva de minions efetuada.')
   end
 end

@@ -24,7 +24,8 @@ class ReservasController < ApplicationController
     
     respond_to do |format|
       if @reserva.save
-        ReservationMailer.reservation_mailer(@reserva).deliver_now
+        ReservationMailer.reservation_mailer(@reserva).deliver_now #email de reserva para o vendedor
+        ReservationMailer.reservation_user_mailer(@reserva).deliver_now #email de reserva para quem solicitou a reserva
         format.html { redirect_to '/', notice: 'Reserva was successfully created.' }
         format.json { render :create, status: :created, location: @reserva }
       else
@@ -37,13 +38,13 @@ class ReservasController < ApplicationController
 
   # DELETE /reservas/1
   # DELETE /reservas/1.json
-  def destroy
-    @reserva.destroy
-    respond_to do |format|
-      format.html { redirect_to reservas_url, notice: 'Reserva was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @reserva.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to reservas_url, notice: 'Reserva was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -134,7 +134,7 @@ label {
   height: 200px;
 }
 
-.test {
+.buttonIndex {
   display: inline-block;
   border-radius: 4px;
   background-color: #f4511e;
@@ -149,14 +149,14 @@ label {
   margin: 5px;
 }
 
-.test span {
+.buttonIndex span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.test span:after {
+.buttonIndex span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -165,11 +165,12 @@ label {
   transition: 0.5s;
 }
 
-.test:hover span {
+.buttonIndex:hover span {
   padding-right: 25px;
 }
 
-.test:hover span:after {
+.buttonIndex:hover span:after {
   opacity: 1;
   right: 0;
 }
+

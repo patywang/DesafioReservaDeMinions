@@ -1,5 +1,5 @@
 class ReservasController < ApplicationController
-  before_action :set_reserva, only: [:show, :destroy]
+  before_action :set_reserva, only: [:show]
 
   # GET /reservas
   # GET /reservas.json
@@ -35,17 +35,6 @@ class ReservasController < ApplicationController
     end
   end
 
-
-  # DELETE /reservas/1
-  # DELETE /reservas/1.json
-  # def destroy
-  #   @reserva.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to reservas_url, notice: 'Reserva was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reserva
@@ -54,6 +43,6 @@ class ReservasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reserva_params
-      params.require(:reserva).permit(:descricao, {:minions => []}, :email)
+      params.require(:reserva).permit({:minions => []}, :email, :nome)
     end
 end

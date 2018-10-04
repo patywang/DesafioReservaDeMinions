@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181004014131) do
+ActiveRecord::Schema.define(version: 20181004200303) do
 
   create_table "reservas", force: :cascade do |t|
-    t.string   "descricao"
     t.string   "minions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "email"
+    t.string   "nome"
   end
 
 end

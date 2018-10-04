@@ -60,13 +60,12 @@ html lang="en"
               = semantic_form_for @reserva do |f|
           
                 = f.inputs do
-                  
-                li= f.input :email
-                  
-                  br
-                  
-                li= f.input :descricao
                 
+                li= f.input :nome
+                
+                li= f.input :email
+                
+                = f.label 'Selecione o(s) Minion(s) que deseja reservar*'
                 - min = ['Minion Kevin', 'Minion Carl', 'Minion Stuart', 'Minion Bob', 'Avengers Minions']
                 - min.each do |m|
                   li= f.label m

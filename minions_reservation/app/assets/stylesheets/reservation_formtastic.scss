@@ -4,9 +4,10 @@
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
+$font-form: unset;
 
 .formtastic .stringish input {
-    font-family: unset;
+    font-family: $font-form;
     width: 100%;
     padding: 5px 20px;
     margin: 0 0;
@@ -20,7 +21,7 @@ $primary-color: #333;
 .formtastic .stringish label {
     width: 5%;
     color: black;
-    font-family: unset;
+    font-family: $font-form;
     font-size: 12px;
 }
 

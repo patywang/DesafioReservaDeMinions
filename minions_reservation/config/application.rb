@@ -13,7 +13,9 @@ module MinionsReservation
     # -- all .rb files in that directory are automatically loaded.
     #config.assets.paths << Rails.root.join("app/assets/minions")
     #config.assets.precompile << "minions/minion-1.jpg"
-    config.assets.paths << Rails.root.join('app', 'assets', 'hero-images')
+    
+    config.time_zone = 'Brasilia'
+    config.assets.paths << Rails.root.join('app', 'assets', 'minions')
 
     Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
       config.assets.paths << path

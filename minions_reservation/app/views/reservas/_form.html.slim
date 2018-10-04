@@ -66,15 +66,12 @@ html lang="en"
                   br
                   
                 li= f.input :descricao
-                  
+                
                 - min = ['Minion Kevin', 'Minion Carl', 'Minion Stuart', 'Minion Bob', 'Avengers Minions']
                 - min.each do |m|
                   li= f.label m
                   = f.check_box :minions, { multiple: true }, m, false
                   
-                br
-                
-                li= f.datetime_select :data
                 
                 br
                 = f.actions do

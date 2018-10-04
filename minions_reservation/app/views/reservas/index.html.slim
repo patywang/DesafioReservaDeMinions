@@ -5,7 +5,6 @@ table
     tr
       th Descricao
       th Minions
-      th Data
       th
       th
       th
@@ -15,9 +14,7 @@ table
       tr
         td = reserva.descricao
         td = reserva.minions
-        td = reserva.data
         td = link_to 'Show', reserva
-        td = link_to 'Edit', edit_reserva_path(reserva)
         td = link_to 'Destroy', reserva, data: { confirm: 'Are you sure?' }, method: :delete
 
 br

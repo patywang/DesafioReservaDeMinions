@@ -1,5 +1,5 @@
 class ReservasController < ApplicationController
-  before_action :set_reserva, only: [:show, :update, :destroy]
+  before_action :set_reserva, only: [:show, :destroy]
 
   # GET /reservas
   # GET /reservas.json
@@ -25,8 +25,8 @@ class ReservasController < ApplicationController
     respond_to do |format|
       if @reserva.save
         ReservationMailer.reservation_mailer(@reserva).deliver_now
-        format.html { redirect_to @reserva, notice: 'Reserva was successfully created.' }
-        format.json { render :show, status: :created, location: @reserva }
+        format.html { redirect_to '/', notice: 'Reserva was successfully created.' }
+        format.json { render :create, status: :created, location: @reserva }
       else
         format.html { render :new }
         format.json { render json: @reserva.errors, status: :unprocessable_entity }
@@ -53,6 +53,6 @@ class ReservasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reserva_params
-      params.require(:reserva).permit(:descricao, {:minions => []}, :data, :email)
+      params.require(:reserva).permit(:descricao, {:minions => []}, :email)
     end
 end

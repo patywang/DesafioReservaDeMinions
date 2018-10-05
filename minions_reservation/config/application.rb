@@ -15,7 +15,7 @@ module MinionsReservation
     #config.assets.precompile << "minions/minion-1.jpg"
     
     config.time_zone = 'Brasilia'
-    config.assets.paths << Rails.root.join('app', 'assets', 'minions')
+    #config.assets.paths << Rails.root.join('app', 'assets', 'minions')
 
     Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
       config.assets.paths << path

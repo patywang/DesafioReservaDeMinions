@@ -20,7 +20,7 @@ class ReservationMailer < ApplicationMailer
     @minion = minionReservationList(@reserva.minions)
     @time = timeCalculate()
     
-    mail(to: 'patriciadecastrowang@yahoo.com.br', subject: 'Nova reserva de minions!')
+    mail(to: 'miguel@inventosdigitais.com.br', subject: 'Nova reserva de minions!')
   end
   
   def reservation_user_mailer(reserva)

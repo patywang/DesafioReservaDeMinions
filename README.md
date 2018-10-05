@@ -1,4 +1,4 @@
-# DesafioReservaDeMinions
+# Desafio Reserva de Minions
 Desafio da Inventos Digitais: 
 
 Landing Page que permite reservar brinquedos minions em miniatura

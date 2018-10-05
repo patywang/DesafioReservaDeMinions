@@ -1,5 +1,5 @@
 class Reserva < ApplicationRecord
-    validates_presence_of :email, :minions, :nome
+    validates_presence_of :email, :minions, :nome, message: "O campo deve ser preenchido"
     
     EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\Z/
     

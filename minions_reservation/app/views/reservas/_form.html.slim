@@ -25,31 +25,31 @@ html lang="en"
           .col-6.col-sm-4
  
             .card[style="width: 18rem;"]
-              img.card-img-top[src="assets/minions/minion-1.png" alt="Card image cap"]
+              img.card-img-top[src= current_minions.first.imagem]
               .card-body
                 h5.card-title
-                  | Minion Kevin
+                   = current_minions.first.nome
                 p.card-text
-                  | Desenvolvidos a partir de um único DNA - o motivo por serem tão parecidos - possuem um único propósito na vida: servir os maiores vilões de todos os tempos!
+                   = current_minions.first.descricao
               
           .col-6.col-sm-4
             .card[style="width: 18rem;"]
-              img.card-img-top[src="assets/minions/minion-2.jpg" alt="Card image cap"]
+              img.card-img-top[src= current_minions.second.imagem]
               .card-body
                 h5.card-title
-                  | Minion Carl
+                  = current_minions.second.nome
                 p.card-text
-                  | Minions, também definidos como "capanguinhas", são amarelinhos, e podem existir com um olho, dois olhos, topetes, cabelos caídos, curtos, ou nenhum cabelo. .
+                  = current_minions.second.descricao
                
                   
           .col-6.col-sm-4
             .card[style="width: 18rem;"]
-              img.card-img-top[src="assets/minions/minion-3.jpg" alt="Card image cap"]
+              img.card-img-top[src= current_minions.third.imagem]
               .card-body
                 h5.card-title
-                  | Minion Stuart
+                  = current_minions.third.nome
                 p.card-text
-                  | Agora as crianças também poderão ter seu minion em casa e se divertir de montão com o Boneco Minion - Stuart.
+                  = current_minions.third.descricao
                
         .col-lg-3
           .well.sidebar-nav style="background-color: #FFD700"
@@ -66,35 +66,33 @@ html lang="en"
                 li= f.input :email
                 
                 = f.label 'Selecione o(s) Minion(s) que deseja reservar*'
-                - min = ['Minion Kevin', 'Minion Carl', 'Minion Stuart', 'Minion Bob', 'Avengers Minions']
-                - min.each do |m|
-                  li= f.label m
-                  = f.check_box :minions, { multiple: true }, m, false
-                  
-                
+                - current_minions.each do |c|
+                  li= f.label c.nome
+                  = f.check_box :minions, { multiple: true }, c.nome, false 
+              
                 br
                 = f.actions do
                   = f.action :submit, as: :button
-                  
+            
         .col-lg-9
           .col-6.col-sm-4
  
             .card[style="width: 18rem;"]
-              img.card-img-top[src="assets/minions/minion-4.jpg" alt="Card image cap"]
+              img.card-img-top[src= current_minions.fourth.imagem]
               .card-body
                 h5.card-title
-                  | Minion Bob
+                  = current_minions.fourth.nome
                 p.card-text
-                  | Agora as crianças também poderão ter seu minion em casa e se divertir de montão com o Boneco Minion - Bob.
+                  = current_minions.fourth.descricao
                   
           .col-6.col-sm-4
  
             .card[style="width: 18rem;"]
-              img.card-img-top[src="assets/minions/minion-5.jpg" alt="Card image cap"]
+              img.card-img-top[src= current_minions.fifth.imagem]
               .card-body
                 h5.card-title
-                  | Avengers Minions
+                  = current_minions.fifth.nome
                 p.card-text
-                  | São mini figuras, colecionáveis, de aproximadamente 2,5 centímetros de altura, dos personagens da franquia Meu Malvado Favorito em roupa de super heróis!
+                  = current_minions.fifth.descricao
               
                 

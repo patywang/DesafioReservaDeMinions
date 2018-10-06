@@ -9,4 +9,4 @@ Os campos a serem preenchidos do formulário são todos obrigatórios.
 
 No final da reserva, dois e-mails são enviados: Um para quem está realizando a reserva e outro para o "vendedor"(e-mail do Miguel da Inventos Digitais).
 
-Link para o heroku: https://desafio-inventos-patricia.herokuapp.com/
+Link para o heroku: https://desafio-inventos-patricia-2.herokuapp.com/
